@@ -9,4 +9,6 @@ import java.io.File
  * @description: 类的描述
  */
 const val ANNOTATION_PACKAGE = "liyihuan.app.android.lib_annotation"
-const val ANNOTATION_NAME = "$ANNOTATION_PACKAGE.DownLoad"
+const val ANNOTATION_NAME = "$ANNOTATION_PACKAGE.DownLoad.*"
+
+const val POSIX = "XXProxy"
