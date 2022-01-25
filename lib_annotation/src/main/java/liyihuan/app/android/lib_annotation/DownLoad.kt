@@ -28,5 +28,18 @@ annotation class DownLoad() {
 
     }
 
+    @Target(AnnotationTarget.FUNCTION)
+    @Retention(AnnotationRetention.SOURCE)
+    annotation class onSuc() {
+
+    }
+
+    @Target(AnnotationTarget.FUNCTION)
+    @Retention(AnnotationRetention.SOURCE)
+    annotation class onFail() {
+
+    }
+
+
 
 }

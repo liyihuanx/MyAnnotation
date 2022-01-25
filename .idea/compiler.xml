@@ -2,7 +2,9 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
+      <module name="MyAnnotation.api_annotation" target="11" />
       <module name="MyAnnotation.app" target="11" />
+      <module name="MyAnnotation.lib_annotationApi" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

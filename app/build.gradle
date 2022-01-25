@@ -51,6 +51,7 @@ dependencies {
 
     // AutoApi 注解
     api project(':lib_annotation')
+    api project(':lib_annotationApi')
     kapt project(':lib_compiler')
 
 }

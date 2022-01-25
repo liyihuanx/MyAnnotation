@@ -15,5 +15,17 @@ const val POSIX = "XXProxy"
 
 const val KAPT_KOTLIN_GENERATED_OPTION_NAME = "kapt.kotlin.generated"
 
-const val APT_PACKAGE = "moduleName" //接收 包名（APT 存放的包名）
+//接收 包名（APT 存放的包名）
+const val APT_PACKAGE = "moduleName"
+
+
+const val API_PACKAGE = "com.liyihuanx.lib_annotationapi"
+
+val SUPER_INTERFACE = ClassName(API_PACKAGE, "BaseDownLoadProxy")
+
+val DOWNLOAD_MANAGER = ClassName(API_PACKAGE, "DownLoadManager")
+
+val ACTIVITY = ClassName("android.app","Activity")
+
+const val I_DOWNLOAD_PATH = "$API_PACKAGE.IDownLoad"
 
