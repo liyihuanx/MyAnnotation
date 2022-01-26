@@ -5,6 +5,7 @@
       <module name="MyAnnotation.api_annotation" target="11" />
       <module name="MyAnnotation.app" target="11" />
       <module name="MyAnnotation.lib_annotationApi" target="11" />
+      <module name="MyAnnotation.lib_download" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

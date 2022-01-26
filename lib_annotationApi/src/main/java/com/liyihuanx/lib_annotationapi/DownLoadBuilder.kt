@@ -40,7 +40,6 @@ class DownLoadBuilder {
 
             override fun onFail() {
                 baseDownLoadProxy?.onFail()
-
             }
 
         })

@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+
+
+    // 协程
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+    //viewModelScope 只能在ViewModel中使用，绑定ViewModel的生命周期
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    //lifecycleScope 能在Activity、Fragment中使用，会绑定Activity和Fragment的生命周期
+    api 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+
+
+
+//    api "android.arch.lifecycle:extensions:1.1.1"
+//    //noinspection LifecycleAnnotationProcessorWithJava8
+//    kapt "android.arch.lifecycle:compiler:1.1.1"
+}
