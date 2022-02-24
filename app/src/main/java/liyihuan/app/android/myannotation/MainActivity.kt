@@ -2,24 +2,17 @@ package liyihuan.app.android.myannotation
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import com.liyihuanx.lib_annotationapi.DownLoadBuilder
-import com.liyihuanx.lib_annotationapi.DownLoadManager
-import com.liyihuanx.lib_annotationapi.IDownLoad
 import com.liyihuanx.lib_download.DownloadManager
 import com.tbruyelle.rxpermissions2.RxPermissions
-import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import liyihuan.app.android.lib_annotation.DownLoad
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     val path = "http://files.ibaodian.com/v2/teamfile/1ca447a600580cdcb575ab9348536f38/CM10086_android_V4.8.0_20180708_A0001.apk"

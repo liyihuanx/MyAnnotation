@@ -10,7 +10,6 @@ import okhttp3.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.io.InputStream
 import java.util.HashMap
 
 /**
@@ -33,7 +32,7 @@ class DownloadManager private constructor() {
 
     fun downloadFile(context: Context, url: String) {
         temContext = context
-        GlobalScope.launch {
+        val job = GlobalScope.launch(Dispatchers.IO) {
             flow {
                 emit(url)
             }.map {
@@ -44,15 +43,16 @@ class DownloadManager private constructor() {
                 FileUtil.getRealFileName(it)
             }.flatMapConcat {
                 realDownLoad(it)
-            }.flowOn(Dispatchers.IO)
-                .debounce(1000)
+            }.debounce(1000)
                 .collect {
                     Log.d("QWER", "collect: ${it.totalLength}")
 //                    val file = File(Constant.FILE_PATH, it.fileName)
 //                    FileUtil.startInstall(temContext, file)
                 }
-
         }
+
+
+        job.cancel()
 //        GlobalScope.launch(Dispatchers.IO) {
 //            val infobean = createDownInfo(url)
 //            val info = FileUtil.getRealFileName(infobean)
